@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 const ProductPage=()=>{
   const location=useLocation();
   const { productSlug }=useParams();
   const [product, setProduct]=useState(null)
+  const navigate=useNavigate()
 
   useEffect(()=>{
     if(location.state!==null)
       setProduct(location.state)
+    else
+      navigate('/store')
   },[location]);
 
   return (

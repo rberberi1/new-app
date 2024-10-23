@@ -1,19 +1,25 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../components/auth";
 
-const user={
-  name:'user',
-  email:'user@gmail.com',
-  password: 'user123'
+const current_user={
+  name:'Rosela',
+  email:'rosela@gmail.com',
+  password: '123'
 }
 
 const LoginPage =()=>{
-  const [isLoggedIn, setIsLoggedIn]=useState(false)
+  //const[user, setUser]=useState('')
+  //const [isLoggedIn, setIsLoggedIn]=useState(false)
   const navigate=useNavigate();
+  const auth= useAuth()
 
   const handleLogin=()=>{
-      setIsLoggedIn(true);
-      navigate('/store', {state:user});
+      //setIsLoggedIn(true);
+      //setUser(current_user)
+      auth.login(current_user)
+      //navigate('/store', {state:user});
+      navigate('/store')
   }
 
   return (

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState,useRef } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import Product from "../components/product/Product";
+import { useAuth } from "../components/auth";
 
 const products = [
   {
@@ -32,13 +33,20 @@ const StorePage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const selectedColor = useRef();
+  const auth=useAuth()
+
+  // useEffect(() => {
+  //   // if (!location.state) 
+  //   //   navigate('/login');
+  //   setUser(location.state);
+  //   console.log(location)
+  // }, [location]); 
 
   useEffect(() => {
-    // if (!location.state) 
-    //   navigate('/login');
-    setUser(location.state);
-    console.log(location)
-  }, [location]); 
+    if (auth.user) {
+      setUser(auth.user); 
+    }
+  }, [auth.user]); 
 
   const filteredProducts = useMemo(() => {
     const sortOrder = searchParams.get('sort');
@@ -71,10 +79,16 @@ const StorePage = () => {
     });
   };
 
+  const handleLogout =()=>{
+    auth.logout()
+    navigate('/')
+  }
+
   return (
     <>
+      <h2>Hello, {user?user.name:'Guest'}</h2>
       <div className="store-buttons">
-        <button onClick={() => navigate('/')} style={{ marginLeft: '2rem' }}>Logout</button>
+        <button onClick={handleLogout} style={{ marginLeft: '2rem' }}>Logout</button>
 
         <button className="query-btn" onClick={() => handleSort('descending')}>Sort Descending</button>
         <button className="query-btn" onClick={() => handleSort('ascending')}>Sort Ascending</button>
@@ -113,6 +127,7 @@ const StorePage = () => {
           />
         ))}
       </div>
+      {console.log(location)}
     </>
   );
 };
