@@ -7,15 +7,9 @@ import { BrowserRouter } from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
-    <div>
-      <b>Hello</b> <br /> Refer to{' '}
-      <a href="https://reactrouter.com/en/main" target="_blank">
-        React router docs
-      </a>{' '}
-      for documentations 
-    
+    <div>   
       <Layout>
-        <Routes></Routes>
+        <Routes/>
       </Layout>
     
     </div>

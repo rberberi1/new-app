@@ -1,11 +1,116 @@
 .layout_nav{
   width: 100vw;
-  height: 100px;
+  height: 3rem;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  gap:3rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  background: black;
+  margin-bottom: 3rem;
+}
+ .layout_nav a{
+  color: white;
+  text-decoration: none;
+  flex-direction: row;
+  font-size: 1.5rem;
+  margin-right: 3rem;
+ margin-left: 2rem;
+ }
+
+ .layout_nav a:hover{
+  cursor: pointer;
+  background-color: gray;
+  padding: 6px;
+  border-radius: 10px;
+ }
+
+ .home-page{
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  padding: 3rem;
+ }
+ 
+ #reset-btn{
+  background-color: rgb(255, 179, 0);
+ }
+
+ .store-buttons button{
+  margin-right: 4rem;
+ }
+
+ .query-btn{
+  background-color: yellowgreen;
+ }
+ .query-btn:hover{
+  background-color: green;
+ }
+
+ .products-grid {
+  margin-left: 2rem;
+  display: grid;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); 
+  gap: 20px; 
 }
 
+.product {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+ button{
+  background-color: rgb(255, 124, 124);
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: red;
+}
+
+ .product-div{
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: red solid;
+  width:25%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem;
+  border-radius: 8px;
+ }
+
+ .login{
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  justify-content: center;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+ }
+
 .layout_footer{
+  margin-top: 3rem;
   width: 100vw;
       height: 50px;
       background-color: black;
