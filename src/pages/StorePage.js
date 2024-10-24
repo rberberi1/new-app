@@ -86,7 +86,7 @@ const StorePage = () => {
 
   return (
     <>
-      <h2>Hello, {user?user.name:'Guest'}</h2>
+      <h2 style={{marginLeft:'2rem'}}>Hello, {user?user.name:'Guest'}</h2>
       <div className="store-buttons">
         <button onClick={handleLogout} style={{ marginLeft: '2rem' }}>Logout</button>
 
